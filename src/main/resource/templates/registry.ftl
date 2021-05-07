@@ -43,10 +43,10 @@
             <tr>
                 <td>验证码</td>
                 <td><input type="text" name="verifycode"/></td>
+                <td><img src="images/verifycode"></td>
             </tr>
             <tr>
-                <td>用户名</td>
-                <td><input type="button"/></td>
+                <td><input type="button" value="提交"/></td>
             </tr>
         </table>
     </form>
