@@ -175,20 +175,35 @@
 											"top": 486,
 											"width": 104,
 											"height": 13
+										},
+										{
+											"_type": "ERDColumnView",
+											"_id": "AAAAAAF5Sst6spHBYX4=",
+											"_parent": {
+												"$ref": "AAAAAAF5SeWKRQ0xa80="
+											},
+											"model": {
+												"$ref": "AAAAAAF5Sst6TZG+Q64="
+											},
+											"font": "Arial;13;0",
+											"left": 733,
+											"top": 501,
+											"width": 104,
+											"height": 13
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 728,
 									"top": 391,
 									"width": 114,
-									"height": 113
+									"height": 128
 								}
 							],
 							"font": "Arial;13;0",
 							"left": 728,
 							"top": 368,
 							"width": 114,
-							"height": 136,
+							"height": 151,
 							"nameLabel": {
 								"$ref": "AAAAAAF5SeWKRQ0whxc="
 							},
@@ -897,7 +912,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 790,
-									"top": 516,
+									"top": 524,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 15,
@@ -914,7 +929,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 791,
-									"top": 522,
+									"top": 537,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 30,
@@ -948,7 +963,7 @@
 								"$ref": "AAAAAAF5SeWKRQ0vS+8="
 							},
 							"lineStyle": 2,
-							"points": "776:503;776:544",
+							"points": "776:518;776:544",
 							"nameLabel": {
 								"$ref": "AAAAAAF5Se8kxg8LZ/k="
 							},
@@ -3283,6 +3298,15 @@
 								"$ref": "AAAAAAF5SeWKRA0tFpQ="
 							},
 							"name": "媒体组标识",
+							"length": 0
+						},
+						{
+							"_type": "ERDColumn",
+							"_id": "AAAAAAF5Sst6TZG+Q64=",
+							"_parent": {
+								"$ref": "AAAAAAF5SeWKRA0tFpQ="
+							},
+							"name": "商品描述",
 							"length": 0
 						}
 					]
