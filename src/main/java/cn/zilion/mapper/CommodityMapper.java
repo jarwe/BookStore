@@ -1,11 +1,12 @@
 package cn.zilion.mapper;
 
+import cn.zilion.pojo.Commodity;
 import cn.zilion.pojo.CommodityPackage;
 
 import java.util.List;
 
 public interface CommodityMapper {
-    List<CommodityPackage> findCommodityPackageByCategory();
+    Integer insertCommodity(Commodity commodity);
 
-    List<CommodityPackage> findCommodityPackageByWords();
+    Integer updateCommodity(Commodity commodity);
 }

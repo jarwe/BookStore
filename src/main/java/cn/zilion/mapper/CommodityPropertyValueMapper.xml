@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zilion.mapper.CommodityPropertyValueMapper">
+    <insert id="insertCommodityPropertyValue" parameterType="CommodityPropertyValue">
+        <selectKey resultType="java.lang.Integer" order="AFTER">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        INSERT TABLE commodityPropertyValue_t (commodityPropertyNameId_c, commodityId_c commodityPropertyValue_c) VALUES (#{commodityPropertyNameId}, #{commodityId}, #{commodityPropertyValue});
+    </insert>
+
+    <update id="updateCommodityPropertyValue" parameterType="CommodityPropertyValue">
+        <selectKey resultType="java.lang.Integer" order="AFTER">
+            SELECT LAST_CHANGE_ID();
+        </selectKey>
+        UPDATE TABLE commodityPropertyValue_t SET commodityPropertyNameId_c=#{commodityPropertyNameId} commodityId_c=#{commodityId} commodityPropertyValue_c=#{commodityPropertyValue} WHERE commodityPropertyValueId_c=#{commodityPropertyValueId};
+    </update>
 </mapper>

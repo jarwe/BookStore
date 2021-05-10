@@ -7,7 +7,7 @@ public class CommodityPackage {
     Commodity commodity;
     CommodityType commodityType;
     List<MediaItem> mediaItemList;
-    Map<String, String> commodityPropertyMap;
+    List<CommodityPropertyMap> commodityPropertyMapList;
 
     public Commodity getCommodity() {
         return commodity;
@@ -33,11 +33,11 @@ public class CommodityPackage {
         this.mediaItemList = mediaItemList;
     }
 
-    public Map<String, String> getCommodityPropertyMap() {
-        return commodityPropertyMap;
+    public List<CommodityPropertyMap> getCommodityPropertyMap() {
+        return commodityPropertyMapList;
     }
 
-    public void setCommodityPropertyMap(Map<String, String> commodityPropertyMap) {
-        this.commodityPropertyMap = commodityPropertyMap;
+    public void setCommodityPropertyMap(List<CommodityPropertyMap> commodityPropertyMapList) {
+        this.commodityPropertyMapList = commodityPropertyMapList;
     }
 }

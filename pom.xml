@@ -29,7 +29,7 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${spring.boot.mybatis.starter.versionn}</version>
+            <version>${spring.boot.mybatis.starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

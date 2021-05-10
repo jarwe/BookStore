@@ -21,7 +21,7 @@ public class UserController {
     public String userRegistry(HttpServletRequest request) {
         User user = null;
         ModelAndView modelAndView;
-        String responseString;
+        String responseString = null;
         HttpSession session = request.getSession();
         if(request.getParameter("verifycode").equals(session.getAttribute("verifycode"))) {
             user = fetchParameters(request);
@@ -30,7 +30,7 @@ public class UserController {
             modelAndView.addObject("user", user);
             modelAndView.setViewName("userProfile");
         }
-
+        return responseString;
     }
 
     private User fetchParameters(HttpServletRequest request) {
