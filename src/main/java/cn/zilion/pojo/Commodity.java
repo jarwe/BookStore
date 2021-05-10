@@ -8,6 +8,7 @@ public class Commodity {
     Float commodityPrice;
     Integer commodityAmount;
     String commodityDescription;
+    Integer saleAmount;
 
     public Integer getCommodityId() {
         return commodityId;
@@ -63,5 +64,13 @@ public class Commodity {
 
     public void setCommodityDescription(String commodityDescription) {
         this.commodityDescription = commodityDescription;
+    }
+
+    public Integer getSaleAmount() {
+        return saleAmount;
+    }
+
+    public void setSaleAmount(Integer saleAmount) {
+        this.saleAmount = saleAmount;
     }
 }

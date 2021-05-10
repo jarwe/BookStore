@@ -1,13 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zilion.mapper.CommodityPackageMapper">
-    <resultMap id="commodityPackageMap" type="cn.zilion.pojo.CommodityPackage">
-
+    <resultMap id="commodityPackageMap" type="CommodityPackage">
+        <association property="commodity" javaType="Commodity">
+            <id property="commodityId" column="commodityId_c"/>
+            <result property="commodityName" column="commodityName_c"/>
+            <result property="userId" column="userId_c"/>
+            <result property="commodityTypeId" column="commodityTypeId_c"/>
+            <result property="commodityPrice" column="commodityPrice_c"/>
+            <result property="commodityAmount" column="commodityAmount_c"/>
+            <result property="commodityDescription" column="commodityDescription_c"/>
+            <result property="saleAmount" column="saleAmount_c"/>
+        </association>
+        <association property="commodityType" javaType="CommodityType">
+            <id property="commodityTypeId" column="commodityTypeId_c"/>
+            <result property="commodityCategory" column="commodityCategory_c"/>
+            <result property="commoditySubcategory" column="commoditySubcategory_c"/>
+            <result property="brand" column="brand_c"/>
+            <result property="commodityType" column="commodityType_c"/>
+        </association>
+        <association property="mediaItemList" javaType="MediaItem">
+            <id property="mediaItemId" column="mediaItemId_c"/>
+            <result property="mediaItemPath" column="mediaItemPath_c"/>
+            <result property="mediaItemName" column="mediaItemName_c"/>
+            <result property="mediaItemType" column="mediaItemType_c"/>
+            <result property="mediaItemOrder" column="mediaItemOrder_c"/>
+        </association>
+        <collection property="commodityPropertyMap" ofType="HashMap">
+            <id property="id" column="commodityPropertyName_c"/>
+            <result property="subject" column="commodityPropertyValue_c"/>
+        </collection>
     </resultMap>
-    <select id="findCommodityPackageByWords" resultMap="commodityPackageMap" parameterType="java.lang.String">
-        SELECT commodity_t.commodityId_c,
-        <foreach collection="list" item="">
-
+    <select id="findCommodityPackageByWords" resultMap="commodityPackageMap" parameterType="CommodityQuery">
+        select commodity_t.commodityId_c, commodity_t.commodityName_c, commodity_t.userId_c,
+        commodity_t.commodityTypeId_c, commodity_t.commodityPrice_c, commodity_t.commodityAmount_c,
+        commodity_t.commodityDescription_c, commodity_t.saleAmount_c, commoditytype_t.commodityTypeId_c,
+        commoditytype_t.commodityCategory_c, commoditytype_t.commoditySubcategory_c, commoditytype_t.brand_c,
+        commoditytype_t.commodityType_c,commoditypropertyname_t.commodityPropertyNameId_c,
+        commoditypropertyname_t.commodityTypeId_c,
+        commoditypropertyname_t.commodityPropertyName_c,commoditypropertyvalue_t.commodityPropertyValueId_c,
+        commoditypropertyvalue_t.commodityPropertyNameId_c, commoditypropertyvalue_t.commodityId_c,
+        commoditypropertyvalue_t.commodityPropertyValue_c, mediaitem_t.mediaItemId_c, mediaitem_t.mediaItemPath_c,
+        mediaitem_t.mediaItemName_c, mediaitem_t.mediaItemType_c, mediaitem_t.mediaItemOrder_c, FROM commodity_t,
+        commoditytype_t, commoditypropertyname_t, commoditypropertyvalue_t, mediaitem_t WHERE
+        commodity_t.commodityId_c=commoditypropertyvalue_t.commodityId_c AND
+        commodity_t.commodityTypeId_c=commoditytype_t.commodityTypeId_c AND
+        commoditypropertyname_t.commodityPropertyNameId_c=commoditypropertyvalue_t.commodityPropertyNameId_c AND
+        commoditypropertyname_t.commodityTypeId_c=commoditytype_t.commodityTypeId_c AND
+        <foreach item="item" index="index" collection="list" open="(" separator="OR" close=")">
+            commodity_t.commodityName_c LIKE '%#{item}%' OR commodity_t.commodityDescription_c LIKE '%#{item}%' OR commoditytype_t.commodityCategory_c LIKE '%#{item}%' OR commoditytype_t.commoditySubcategory_c LIKE '%#{item}%' OR commoditytype_t.brand_c  LIKE '%#{item}%' OR commoditytype_t.commodityType_c LIKE '%#{item}%' OR commoditypropertyvalue_t.commodityPropertyValue_c LIKE '%#{item}%'
         </foreach>
+        ORDER BY #{groupCondition}
+        <choose>
+            <when test="assendOrder == true">
+                ASC
+            </when>
+            <otherwise>
+                DESC
+            </otherwise>
+        </choose>
+        LIMIT #{currentPage} * 24, 24
     </select>
 </mapper>

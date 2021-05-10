@@ -1,10 +1,12 @@
 package cn.zilion.pojo;
 
+import java.util.List;
 import java.util.Map;
 
 public class CommodityPackage {
     Commodity commodity;
     CommodityType commodityType;
+    List<MediaItem> mediaItemList;
     Map<String, String> commodityPropertyMap;
 
     public Commodity getCommodity() {
@@ -21,6 +23,14 @@ public class CommodityPackage {
 
     public void setCommodityType(CommodityType commodityType) {
         this.commodityType = commodityType;
+    }
+
+    public List<MediaItem> getMediaItemList() {
+        return mediaItemList;
+    }
+
+    public void setMediaItemList(List<MediaItem> mediaItemList) {
+        this.mediaItemList = mediaItemList;
     }
 
     public Map<String, String> getCommodityPropertyMap() {
