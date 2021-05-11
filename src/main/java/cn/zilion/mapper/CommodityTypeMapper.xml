@@ -12,6 +12,6 @@
         <selectKey resultType="java.lang.Integer" order="AFTER">
             SELECT LAST_CHANGE_ID();
         </selectKey>
-        UPDATE TABLE commodityType_t SET commodityCategory_c=#{commodityType} commoditySubcategory_c=#{commoditySubcategory} brand_c= #{brand} commodityType_c= #{commodityType} WHERE commodityTypeId=#{commodityTypeId_c};
+        UPDATE TABLE commodityType_t SET commodityCategory_c=#{commodityType}, commoditySubcategory_c=#{commoditySubcategory}, brand_c= #{brand}, commodityType_c= #{commodityType} WHERE commodityTypeId=#{commodityTypeId_c};
     </update>
 </mapper>

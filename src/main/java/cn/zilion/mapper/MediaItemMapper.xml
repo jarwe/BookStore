@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.zilion.mapper.MediaItemMapper">
+    <insert id="insertMediaItem" parameterType="MediaItem">
+        <selectKey order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID();
+        </selectKey>
+        INSERT TABLE mediaItem_t (mediaItemPath_c, mediaItemName_c, mediaItemType_c, mediaItemOrder_c) VALUES (#{mediaItemPath}, #{mediaItemName}, #{mediaItemType}, #{mediaItemOrder});
+    </insert>
+
+    <update id="updateMediaItem" parameterType="MediaItem">
+        <selectKey resultType="java.lang.Integer" order="AFTER">
+            SELECT LAST_CHANGE_ID();
+        </selectKey>
+        UPDATE TABLE mediaItem_t SET mediaItemPath_c=#{mediaItemPath}, mediaItemName_c=#{mediaItemName}, mediaItemType_c=#{mediaItemType}, mediaItemOrder_c=#{mediaItemOrder} WHERE mediaItemId_c=#{mediaItemId};
+    </update>
 </mapper>
