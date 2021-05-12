@@ -61,4 +61,8 @@
         </choose>
         LIMIT #{currentPage} * 24, 24
     </select>
+
+    <select id="findCommodityPropertyName" resultType="CommodityPropertyName" parameterType="CommodityType">
+        SELECT commodityPropertyName_t.commodityPropertyNameId_c, commodityPropertyName_t.commodityPropertyName_c FROM commodityPropertyName_t WHERE commodityPropertyName_t.commodityTypeId_c IN (SELECT commodityType_t.commodityTypeId_c FROM commodityType_t WHERE commodityType_t.category = #{category_c} AND commodityType_t.subcategory_c = #{subcategory_c});
+    </select>
 </mapper>

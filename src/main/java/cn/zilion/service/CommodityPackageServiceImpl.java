@@ -2,7 +2,9 @@ package cn.zilion.service;
 
 import cn.zilion.mapper.*;
 import cn.zilion.pojo.CommodityPackage;
+import cn.zilion.pojo.CommodityPropertyName;
 import cn.zilion.pojo.CommodityQuery;
+import cn.zilion.pojo.CommodityType;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +33,14 @@ public class CommodityPackageServiceImpl implements CommodityPackageService {
     public List<CommodityPackage> searchCommodity(CommodityQuery commodityQuery) {
         CommodityPackageMapper commodityPackageMapper = sqlSession.getMapper(CommodityPackageMapper.class);
         return null;
+    }
+
+    public List<CommodityPropertyName> searchCommodityPropertyNameByType(CommodityType commodityType) {
+        List<CommodityPropertyName> result = null;
+        CommodityPackageMapper commodityPackageMapper = sqlSession.getMapper(CommodityPackageMapper.class);
+        if(commodityPackageMapper != null) {
+            result = commodityPackageMapper.findCommodityPropertyName(commodityType);
+        }
+        return result;
     }
 }
