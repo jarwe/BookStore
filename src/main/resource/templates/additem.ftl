@@ -140,9 +140,60 @@
                 </td>
             </tr>
         </table>
+        <table>
+            <tr>
+                <td>
+                    商品名称
+                </td>
+                <td>
+                    <input type="text" name="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    品牌
+                </td>
+                <td>
+                    <input type="text" name="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    商品描述
+                </td>
+                <td>
+                    <input type="text" name="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    商品型号
+                </td>
+                <td>
+                    <input type="text" name="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    价格
+                </td>
+                <td>
+                    <input type="text" name="" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    数量
+                </td>
+                <td>
+                    <input type="text" name="" />
+                </td>
+            </tr>
+        </table>
         <table id="propertiestable">
 
         </table>
+        <input type="submit" />
     </form>
 </div>
 </body>
