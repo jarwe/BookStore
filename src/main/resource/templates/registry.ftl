@@ -3,10 +3,16 @@
 <head>
     <meta charset="utf-8" content="text/html"/>
     <title>用户注册</title>
+    <script language="javascript" type="text/html">
+        function submitRegistry() {
+            registryForm = document.getElementById("userregistry")
+            registryForm.submit()
+        }
+    </script>
 </head>
 <body>
 <div>
-    <form method="post" target="_blank">
+    <form id="userregistry" method="post" target="_blank">
         <table class="registrytable" border="0px">
             <tr>
                 <td>用户名</td>
@@ -42,15 +48,13 @@
             </tr>
             <tr>
                 <td>验证码</td>
-                <td><input type="text" name="verifycode"/></td>
-                <td><img src="images/verifycode"></td>
+                <td><td><input type="text" name="verifycode"/></td><td><img src="images/verifycode"></td></td>
             </tr>
             <tr>
-                <td><input type="button" value="提交"/></td>
+                <td><input type="button" value="提交" onclick="submitRegistry()"/></td>
             </tr>
         </table>
     </form>
 </div>
-
 </body>
 </html>
