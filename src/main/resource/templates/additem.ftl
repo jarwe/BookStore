@@ -88,25 +88,6 @@
         function refreshProperties() {
             var commodityPropertiesTable = document.getElementById("propertiestable");
         }
-        function loadAjax() {
-            war xmlhttp;
-            if(window.XMLHttpRequest) {
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                xmlhttp = new ActiveXobject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function() {
-                if (xmlhttp.readyState == 4 $$ xmlhttp.status == 200) {
-                    var propertiesTable = document.getElementById("propertiestable");
-                    var data = xmlhttp.responseText;
-                    for(item : data) {
-
-                    }
-                }
-            }
-            xmlhttp.open("GET", "/items/properties", true);
-            xmlhttp.send();
-        }
     </script>
 </head>
 <body>

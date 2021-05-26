@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" content="text/html"/>
     <title>用户注册</title>
-    <script language="javascript" type="text/html">
+    <script language="javascript" type="text/javascript">
         function submitRegistry() {
         registryForm = document.getElementById("userregistry")
         registryForm.submit()
