@@ -2,8 +2,8 @@ package cn.zilion.pojo;
 
 public class CommodityType {
     Integer commodityTypeId;
-    String commodityCategory;
-    String commoditySubcategory;
+    Integer commodityCategoryId;
+    Integer commoditySubcategoryId;
     String brand;
     String commodityType;
 
@@ -15,20 +15,20 @@ public class CommodityType {
         this.commodityTypeId = commodityTypeId;
     }
 
-    public String getCommodityCategory() {
-        return commodityCategory;
+    public Integer getCommodityCategoryId() {
+        return commodityCategoryId;
     }
 
-    public void setCommodityCategory(String commodityCategory) {
-        this.commodityCategory = commodityCategory;
+    public void setCommodityCategoryId(Integer commodityCategoryId) {
+        this.commodityCategoryId = commodityCategoryId;
     }
 
-    public String getCommoditySubcategory() {
-        return commoditySubcategory;
+    public Integer getCommoditySubcategoryId() {
+        return commoditySubcategoryId;
     }
 
-    public void setCommoditySubcategory(String commoditySubcategory) {
-        this.commoditySubcategory = commoditySubcategory;
+    public void setCommoditySubcategoryId(Integer commoditySubcategoryId) {
+        this.commoditySubcategoryId = commoditySubcategoryId;
     }
 
     public String getBrand() {

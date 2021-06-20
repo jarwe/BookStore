@@ -28,7 +28,7 @@
             </tr>
             <tr>
                 <td>性别</td>
-                <td><input type="radio" name="gender"/></td>
+                <td><input type="radio" name="gender" value="0"/><input type="radio" name="gender" value="1"/></td>
             </tr>
             <tr>
                 <td>出生日期</td>
